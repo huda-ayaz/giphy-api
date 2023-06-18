@@ -1,3 +1,5 @@
+Access the final site here: https://huda-ayaz.github.io/giphy-api/
+
 # API II
 
 - **Due** June 20th, 2023 by 10:00:00AM
