@@ -52,3 +52,24 @@ h1 {
   padding: 15px;
   color: white;
 }
+
+button {
+  color: black;
+  background-color: white;
+  text-align: center;
+  padding: 5px;
+  width: 100px;
+  margin-left: 20px;
+  border-radius: 28px;
+}
+
+button:hover {
+  background-color: navy;
+  color: white;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}

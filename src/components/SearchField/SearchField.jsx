@@ -13,7 +13,6 @@ const SearchField = () => {
     return (
         <div class="search-bar">
             <input value={term} onChange={handleInput}/>
-            <button>SEARCH</button>
         </div>
     );
 }
