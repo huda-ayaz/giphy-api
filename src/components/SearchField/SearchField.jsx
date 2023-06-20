@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import "./SearchField.css";
-import axios from "axios";
 
 const SearchField = () => {
     const [term, setTerm] = useState("");
@@ -11,7 +10,7 @@ const SearchField = () => {
     }
 
     return (
-        <div class="search-bar">
+        <div className="search-bar">
             <input value={term} onChange={handleInput}/>
         </div>
     );

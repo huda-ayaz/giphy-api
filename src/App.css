@@ -73,3 +73,16 @@ button:hover {
   justify-content: center;
   padding: 10px;
 }
+
+.gif-results {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 50px;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 20px;
+  font-style: italic;
+}

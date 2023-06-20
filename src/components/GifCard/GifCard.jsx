@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import axios from "axios";
 
-const GifCard = () => {
+function GifCard({gifLink}) {
     return (
         <div>
-            <input value={term} onChange={handleInput}/>
+            <img src = {gifLink}></img>
         </div>
     );
 }
