@@ -30,14 +30,14 @@ In order to interact with the API, you will need to create a free developer acco
 
 To hit various GIPHY API Endpoints, you can use the following paths:
 
-- Regular Search: http://api.giphy.com/v1/gifs/search?q=SEARCH+TERM+GOES+HERE&api_key=YOUR_API_KEY
+- Regular Search: http://api.giphy.com/v1/gifs/search?q=SEARCH+TERM+GOES+HERE&api_key=wL6ffueM0m4qFxcrWZXB115QX2jOOrD2
 
   - returns an array of gif objects
 
-- Trending Search: http://api.giphy.com/v1/gifs/trending?api_key=YOUR_API_KEY
+- Trending Search: http://api.giphy.com/v1/gifs/trending?api_key=wL6ffueM0m4qFxcrWZXB115QX2jOOrD2
 
   - returns an array of gif objects
 
-- Random Search: http://api.giphy.com/v1/gifs/random?api_key=YOUR_API_KEY
+- Random Search: http://api.giphy.com/v1/gifs/random?api_key=wL6ffueM0m4qFxcrWZXB115QX2jOOrD2
 
   - returns a singular gif object
