@@ -1,17 +1,18 @@
 import React, {useState} from "react";
 import "./SearchField.css";
 
-const SearchField = () => {
-    const [term, setTerm] = useState("");
+const SearchField = ({setSearchTerm, submitted}) => {
+    const [input, setInput] = useState("");
 
     const handleInput = (event) => {
-        setTerm(event.target.value);
-        console.log(term);
+        setInput(event.target.value);
+        setSearchTerm(event.target.value);
+        console.log(input);
     }
 
     return (
         <div className="search-bar">
-            <input value={term} onChange={handleInput}/>
+            <input onChange={handleInput}/>
         </div>
     );
 }

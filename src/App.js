@@ -7,6 +7,8 @@ import GifCard from "./components/GifCard/GifCard";
 function App() {
   const [gifs, setGifs] = useState([]);
   const [isLoaded, setIsLoaded] = useState(true);
+  const [term, setSearchTerm] = useState("");
+  const [results, setResults] = useState("");
 
   // const handleIsLoaded = () => {
   //   setIsLoaded(true);
@@ -23,22 +25,27 @@ function App() {
     }, [])
 
   async function fetchTrendingGif() {
-    try { const hold = await axios.get("http://api.giphy.com/v1/gifs/trending?api_key=wL6ffueM0m4qFxcrWZXB115QX2jOOrD2");
+    try { const gifs = await axios.get("http://api.giphy.com/v1/gifs/trending?api_key=wL6ffueM0m4qFxcrWZXB115QX2jOOrD2");
     console.log("got gifs");
-    setGifs(hold.data.data);
+    setResults("Trending gifs:")
+    setGifs(gifs.data.data);
     } catch(error) {
         console.error(error);
     };
   }
 
   async function fetchSearchGif() {
-    try { const distance = await axios.get(`http://api.giphy.com/v1/gifs/search?q=${SearchField.term}&api_key=wL6ffueM0m4qFxcrWZXB115QX2jOOrD2`);
+    try { const gifs = await axios.get(`http://api.giphy.com/v1/gifs/search?q=${term}&api_key=wL6ffueM0m4qFxcrWZXB115QX2jOOrD2`);
+    console.log("searched" + term);
     setIsLoaded(false);
-    console.log("searched");
+    setResults("Showing results for gifs related to: " + term);
     setGifs(gifs.data.data);
     } catch(error) {
         console.error(error);
     };
+  }
+
+  const handleInput = () => {
     fetchSearchGif();
   }
 
@@ -46,10 +53,10 @@ function App() {
     <div>
       <h1>GIF SEARCH</h1>
       <div className="search-bar">
-        <SearchField/>
-        <button onClick={fetchSearchGif}>SEARCH</button>
+        <SearchField setSearchTerm={setSearchTerm}/>
+        <button onClick={handleInput}>SEARCH</button>
       </div>
-      <h2>Trending Gifs:</h2>
+      <h2>{results}</h2>
       <div className="gif-results">
         {gifs.map(gif => (
         <GifCard gifLink={gif.images.fixed_height.url}></GifCard>
