@@ -51,10 +51,6 @@ function App() {
       setStickerOnly(false);
       document.getElementById("btn-sticker").classList.remove("selected");
     }
-    // if (!submitted) {
-    //   fetchTrendingGif();
-    //   console.log("stickers");
-    // }
   }
 
   return (
@@ -65,6 +61,7 @@ function App() {
         <button onClick={handleInput}>SEARCH</button>
         <button id="btn-sticker" onClick={handleStickerFilter}>STICKERS ONLY</button>
       </div>
+      <p>Click SEARCH again after changing the sticker filter for your searches!</p>
       <div>
       </div>
       <h2>{results}</h2>
